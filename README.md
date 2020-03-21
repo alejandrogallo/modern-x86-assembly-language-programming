@@ -1,3 +1,10 @@
+
+# Fork note
+
+This is my port of the code examples where I rewrite them to run
+under `gcc` on a `64` bit linux machine using the `gnu` assembler
+and a simple `Makefile` as an assembler.
+
 # Apress Source Code
 
 This repository accompanies [*Modern X86 Assembly Language Programming*](http://www.apress.com/9781484200650) by Daniel Kusswurm (Apress, 2014).
