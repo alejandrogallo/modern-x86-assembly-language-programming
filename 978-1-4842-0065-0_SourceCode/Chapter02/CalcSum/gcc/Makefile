@@ -1,5 +1,5 @@
-ASFLAGS = --32 -march=generic32
-CPPFLAGS = -m32 -no-pie -std=c++11
+ASFLAGS  ?= --32
+CPPFLAGS ?= -m32 -std=c++11 -O0 -pedantic -Wall --all-warnings
 
 OBJS = $(patsubst %.asm,%.o,$(wildcard *.asm)) \
        $(patsubst %.cpp,%.o,$(wildcard *.cpp)) \
@@ -8,7 +8,7 @@ OBJS = $(patsubst %.asm,%.o,$(wildcard *.asm)) \
 TARGETS = $(OBJS) main
 
 main: $(OBJS)
-	gcc $(CPPFLAGS) $? -o $@
+	gcc $(CPPFLAGS) $(OBJS) -o $@
 
 %.o: %.asm
 	as ${ASFLAGS} $< -o $@
